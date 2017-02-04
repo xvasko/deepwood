@@ -1,0 +1,6 @@
+<% if @feed_items.any? %>
+    <ol class="microposts">
+      <%= render @feed_items %> <!-- Rails vie, ze ma zavolat /microposts/_micropost.html.erb lebo @feed_items ma triedu Micropost -->
+    </ol>
+    <%= will_paginate @feed_items %>
+<% end %>
