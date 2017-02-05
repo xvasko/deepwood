@@ -4,6 +4,11 @@
 /* mixins, variables, etc. */
 
 $gray-medium-light: #eaeaea;
+$background-color: #121314;
+$front-color: #1C1C1F;
+$lines-color: #2d2d2d;
+$brown-color: #5D4037;
+$hover-brown-color: #4E342E;
 
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
@@ -14,7 +19,8 @@ $gray-medium-light: #eaeaea;
 /* universal */
 
 body {
-  padding-top: 60px;
+  padding-top: 100px;
+  background-color: $background-color;
 }
 
 section {
@@ -30,6 +36,13 @@ textarea {
   h1 {
     margin-bottom: 10px;
   }
+}
+
+.navbar {
+  background-color: $front-color;
+  border-bottom-color: $lines-color;
+  border-bottom-width: 1px;
+  height: 72px;
 }
 
 /* typography */
@@ -53,10 +66,41 @@ h2 {
   font-weight: normal;
   color: $gray-light;
 }
+h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
 
 p {
   font-size: 1.1em;
   line-height: 1.7em;
+}
+
+label {
+  color: #cfcfcf;
+}
+
+a {
+  color: $brown-color;
+
+  &:hover {
+    color: $hover-brown-color;
+  }
+}
+
+.btn-primary {
+  margin-top: 20px;
+  border-width: 2px;
+  background-color: transparent;
+  border-color: $brown-color;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  &:hover, &:active, &:focus, &:visited {
+    background-color: $brown-color;
+    border-color: $brown-color;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+  }
 }
 
 /* header */
@@ -68,20 +112,23 @@ p {
   color: white;
   text-transform: uppercase;
   letter-spacing: -1px;
-  padding-top: 9px;
+  padding: 13px;
   font-weight: bold;
   &:hover {
     color: white;
     text-decoration: none;
+  }
+  span {
+    font-size: 40px;
   }
 }
 
 /* footer */
 
 footer {
-  margin-top: 45px;
+  margin-top: 30px;
   padding-top: 5px;
-  border-top: 1px solid $gray-medium-light;
+  border-top: 1px solid $lines-color;
   color: $gray-light;
   a {
     color: $gray;
@@ -187,6 +234,18 @@ aside {
   padding: 0;
 }
 /* forms */
+.form-container {
+  padding: 30px;
+  background-color: $front-color;
+  border-style: solid;
+  border-width: 1px;
+  border-color: $lines-color;
+  margin-bottom: 12px;
+}
+
+.phone-container {
+  margin-bottom: 180px;
+}
 
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
@@ -246,8 +305,9 @@ input {
   list-style: none;
   padding: 0;
   li {
-    padding: 10px 0;
-    border-top: 1px solid #e8e8e8;
+    border: 1px solid $lines-color;
+    background-color: $front-color;
+    margin-top: 10px;
   }
   .user {
     margin-top: 5em;
@@ -255,7 +315,7 @@ input {
   }
   .content {
     display: block;
-    margin-left: 60px;
+    margin: 20px 20px 20px 60px;
     img {
       display: block;
       padding: 5px 0;
@@ -263,20 +323,61 @@ input {
   }
   .timestamp {
     color: $gray-light;
-    display: block;
-    margin-left: 60px;
+    float: right;
+    margin: 10px 10px 0 0;
   }
   .gravatar {
     float: left;
-    margin-right: 10px;
-    margin-top: 5px;
+    margin: 6px;
+    border-radius: 50%;
+  }
+  .name {
+    position: absolute;
+    margin-top: 10px;
+  }
+  .micropost-header {
+    height: 42px;
+    border-bottom: 1px solid $lines-color;
+  }
+  .micropost-image {
+    img {
+      width: 100%;
+    }
   }
 }
 
-aside {
+.micropost_form {
+  padding: 12px 0px;
+  margin: 12px 0px;
+  background-color: $front-color;
+  border: 1px solid $lines-color;
   textarea {
     height: 100px;
-    margin-bottom: 5px;
+    resize: none;
+    background-color: #FFFFFF;
+    border-color: $lines-color;
+    padding: 5px;
+    font-size: 18px;
+    &:focus {
+      border-color: $lines-color;
+      outline: none;
+      -webkit-box-shadow: inset 0px 0px 8px 1px rgba(0,188,212,1);
+      -moz-box-shadow: inset 0px 0px 8px 1px rgba(0,188,212,1);
+      box-shadow: inset 0px 0px 8px 1px rgba(0,188,212,1);
+    }
+  }
+  .btn {
+    float: right;
+    width: auto;
+    margin: 0px 12px 0px 0px;
+  }
+  input#micropost_picture {
+    margin: 7px 0px 0px 12px;
+    position: absolute;
+    max-width: 80%;
+  }
+  input::-ms-browse {
+    border-color: red;
   }
 }
 
