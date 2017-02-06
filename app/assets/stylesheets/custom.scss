@@ -45,6 +45,15 @@ textarea {
   height: 72px;
 }
 
+.phone-icon::before {
+  color: white;
+  position: absolute;
+  z-index: 1;
+  font-size: 2.6em;
+  margin-top: -24px;
+  margin-left: 52px;
+}
+
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -383,9 +392,9 @@ input {
     &:focus {
       border-color: $lines-color;
       outline: none;
-      -webkit-box-shadow: inset 0px 0px 8px 1px rgba(0,188,212,1);
-      -moz-box-shadow: inset 0px 0px 8px 1px rgba(0,188,212,1);
-      box-shadow: inset 0px 0px 8px 1px rgba(0,188,212,1);
+      -webkit-box-shadow: inset 0px 0px 8px 1px rgba(49, 47, 49, 0.91);
+      -moz-box-shadow: inset 0px 0px 8px 1px rgba(49, 47, 49, 0.91);
+      box-shadow: inset 0px 0px 8px 1px rgba(49, 47, 49, 0.91);
     }
   }
   .btn {
@@ -433,3 +442,17 @@ ul.pagination {
   }
 }
 
+/* flash */
+.alert-danger {
+  color: white;
+  background-color: #c62828;
+  border-color: #b71c1c;
+  border-radius: 0;
+}
+
+.alert-success {
+  color: white;
+  background-color: #2E7D32;
+  border-color: #1B5E20;
+  border-radius: 0;
+}

@@ -8,7 +8,10 @@ class StaticPagesController < ApplicationController
     end
   end
 
-  def help
+  def faq
+  end
+
+  def carriers
   end
 
   def about
