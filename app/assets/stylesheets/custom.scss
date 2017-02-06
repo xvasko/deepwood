@@ -314,14 +314,11 @@ input {
 
 /* Users index */
 
-.users {
-  list-style: none;
-  margin: 0;
-  li {
-    overflow: auto;
-    padding: 10px 0;
-    border-bottom: 1px solid $gray-lighter;
-  }
+.user-box {
+  background-color: $front-color;
+  margin-bottom: 12px;
+  padding: 8px;
+  border: 1px solid $lines-color;
 }
 
 /* microposts */
@@ -412,3 +409,27 @@ span.picture {
     border: 0;
   }
 }
+
+/* Pagination */
+.pagination {
+  display: table;
+  margin: 20px auto;
+}
+ul.pagination {
+  li.disabled {
+    a {
+      background-color: $background-color;
+      border-color: $lines-color;
+      &:hover {
+        background-color: $background-color;
+        border-color: $lines-color;
+      }
+    }
+
+  }
+  a {
+    background-color: $front-color;
+    border-color: $lines-color;
+  }
+}
+
