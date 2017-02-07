@@ -53,7 +53,9 @@ textarea {
   margin-top: -24px;
   margin-left: 52px;
 }
-
+div {
+  color: #7a7a7a;
+}
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -94,6 +96,7 @@ a {
 
   &:hover {
     color: $hover-brown-color;
+    text-decoration: none;
   }
 }
 
@@ -116,7 +119,6 @@ a {
 
 #logo {
   float: left;
-  margin-right: 10px;
   font-size: 1.7em;
   color: white;
   text-transform: uppercase;
@@ -130,6 +132,14 @@ a {
   span {
     font-size: 40px;
   }
+}
+
+#deepwood {
+  float: left;
+  height: 30px;
+  width: 130px;
+  margin-top: 21px;
+  margin-left: 6px;
 }
 
 .icon {
